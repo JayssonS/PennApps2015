@@ -1,0 +1,92 @@
+
+public class Game
+{
+   private String Character;
+   private String Nombre;
+   private int Health, Attack;
+      
+   public Game(String N,String Hero)
+   {
+      Character = Hero;
+      Nombre = N;
+      
+      if (Hero.equals("Warrior"))
+         {
+            Health = 500;
+            Attack = 35; 
+         }
+      if (Hero.equals("Rogue"))
+         {
+            Health = 400;
+            Attack = 30;
+         }
+      if (Hero.equals("Wizard"))
+         {
+            Health = 350;
+            Attack = 20;
+         }
+            
+   }
+   
+   public static void print(String x)throws InterruptedException
+    {
+      for (int i = 0; i < x.length(); i++)
+      {
+       System.out.print(x.charAt(i));
+       Thread.sleep(10L); // in milliseconds
+      }
+      System.out.println("");
+    }
+   
+    public static void clear()
+    {
+      for(int i = 0; i < 50; i++)
+      System.out.println("");
+    }
+    
+    public static void moveDown()
+    {
+      System.out.println("");
+      System.out.println("");
+    }
+    
+    public String toString()
+    { 
+      return "\nName: " + Nombre + "\nClass: " + Character + "\nHealth Points: " + Health + "\nAttack: " + Attack;
+    }
+    
+    //////////////////////////////////////////////////////////////////
+    
+    public void setHealth(int x)
+    {
+      Health = x;
+    }
+    
+    public int getHealth()
+    {
+      return Health;
+    }
+    
+    public void setAttack(int t)
+    {
+      Attack = t;
+    }
+    
+    public int getAttack()
+    {
+      return Attack;
+    }
+    
+    public void Attack (String s,enemy y)
+    {
+      if(s.equals("Attack"))
+      y.setHealth(y.getHealth() - Attack);
+      else
+      System.out.println("You didn't hit him! Make sure to type Attack!");
+    }
+     
+    
+    
+    
+}
+   
