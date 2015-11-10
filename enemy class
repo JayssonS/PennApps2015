@@ -1,0 +1,64 @@
+public class enemy
+{
+   private int health, attack;
+   private String name;
+   
+   public enemy (String nme, int hp, int atk)
+   {
+      name = nme;
+      health = hp;
+      attack = atk;
+   }
+   
+   public void hit (Game x)
+   {
+      x.setHealth(x.getHealth() - attack);
+   }
+   public void setHealth(int y)
+    {
+      health = y;
+    }
+    
+   public int getHealth()
+    {
+      return health;
+    }
+    
+    ///////////////////////////////////////////////
+    
+   public String toString()
+    { 
+      return "\nName: " + name + "\nHealth Points: " + health + "\nAttack: " + attack;
+    }
+    
+   //////////////////////////////////////////////
+    
+   public void setAttack(int z)
+    {
+      attack = z;
+    }
+    
+   public int getAttack()
+    {
+      return attack;
+    }
+    
+   ////////////////////////////////////////////////
+   
+   public void setName(String n)
+   {
+      name = n;
+   }
+   
+   public String getName()
+   {
+      return name;
+   }
+      
+
+   
+}
+   
+   
+ 
+
