@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class Turn_Based 
+{
+   private Game a;
+   private enemy b;
+   private String dummy;
+   
+   Scanner scan = new Scanner(System.in);
+   
+   public Turn_Based (Game c, enemy d)
+   {
+      a = c;
+      b = d;
+   }
+   
+   public void turncombat() throws InterruptedException
+   {
+      int E = a.getHealth();
+      int F = b.getHealth();
+         
+      for (int turn = 1; F > 0 || E > 0; turn ++)
+      {   
+         if (turn % 2 == 0)
+         {
+            dummy  = scan.nextLine();
+            a.Attack(dummy, b);
+            Game.print("You attacked the " + b.getName() + " and did " + a.getAttack() + " damage!");
+            E = b.getHealth();
+            if(E <= 0)
+            {  
+               System.out.println("");
+               Game.print("You won!");
+               break;
+            }
+            System.out.println(b);    
+         }
+         if (turn % 2 != 0)
+         {
+            b.hit(a);
+            Game.print("The " + b.getName() + " attacked! and did " + b.getAttack() + " damage!");
+            F = a.getHealth();
+            if(F <= 0)
+            {  
+               System.out.println("");
+               Game.print("You lost!");
+               break;
+            }
+            
+            System.out.println(a);
+         } 
+      }
+   }
+}
