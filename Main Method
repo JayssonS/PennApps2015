@@ -1,0 +1,102 @@
+import java.util.Scanner;
+
+public class RockyDungeon
+{
+   public static void main (String[] args)throws InterruptedException
+   {
+      Scanner scan = new Scanner(System.in);
+      String dummy, Name, Class;
+      int Difficulty;
+      
+      Game.clear();
+      Game.print("Hello, welcome to this demo game made by Christian Kline and Jaysson Solano.");
+      Game.print("Before we start, first what is your name?");
+      Name = scan.nextLine();
+      Game.print("Well " + Name + " thank you for taking your time to play, enjoy!");
+      Game.print("Remember! Only press the enter key if it says \"(Cont.)\" at the end.");
+      Thread.sleep(3000L);
+      
+      Game.clear();
+      
+      Game.print("*October 21, 1421. Kingdom of Zonia*");
+      Thread.sleep(750L);
+      Game.print("*10 Years after the Genocide*");
+      Thread.sleep(750L);
+      
+      Game.moveDown();
+      
+      Game.print("Taurus: \"" + Name + "! come downstairs, I need your help.\" (Press enter to continue)");
+      dummy = scan.nextLine();
+      
+      Game.moveDown();
+
+      Game.print("*You come to see Taurus with another man.*");   
+      
+      Game.moveDown();
+      Game.print("Taurus: \"You're going to escort Sir Valence to the Castle.\" (Cont.)");
+      dummy = scan.nextLine();
+      Game.print("Sir Valence: \"It's a pleasure to meet you " + Name + ", I appreciate your assistance.\" (Cont.)");
+      dummy = scan.nextLine();
+      Game.print("Sir Valence: \"I shall wait outside.\" (Cont.)");
+      dummy = scan.nextLine();
+      
+      Game.moveDown();
+      Game.print("*Sir Valence leaves the room*");
+      Thread.sleep(750L);
+      Game.moveDown();
+      
+      Game.print("Taurus: \"Listen here boy, bring that man alive to Zonia's Castle, I'm being paid good money for this (Cont.)");
+      dummy = scan.nextLine();
+      Game.print("Taurus: \"If Sir Valence gets hurt at all...I'll send you back to Ceriric...or what's left (Cont.)");
+      dummy = scan.nextLine();
+      
+      Game.moveDown();
+      Game.print("*You walk outside*");
+      Thread.sleep(750L);
+      Game.moveDown();     
+       
+      Game.print("Sir Valence: \"Well, " + Name + " I guess we should get going.\"");
+      Thread.sleep(1500L);
+     
+      Game.clear();
+      Game.print("*You and Sir Valence begin to walk through the woods.*");
+      Game.moveDown();
+      Thread.sleep(750L);
+      
+      
+      Game.print("Sir Valence: \"So where are you from " + Name + "?\"(Cont.)");
+      dummy = scan.nextLine();
+      
+      Game.print(Name + ": \"Somewhere far far away...\" (Cont.)");
+      dummy = scan.nextLine();
+      
+      Game.moveDown();
+      Game.print("3 unindentified creatures pop out of a bush*");
+      Game.moveDown();
+      
+      Game.print("Sir Valence: \"AGHH!!! " +Name+ "! Please do something!!\" (Cont.)");
+      dummy = scan.nextLine();
+      
+      Game.moveDown();
+      Game.print("---Congrats! You made it passed the long intro, now this is the part where you select your character---");
+      Game.print("---First, what class would you like to choose? Wizard, Warrior, or Rogue. (Case Sensitive)---");
+      Class = scan.nextLine();
+      
+      Game.print("A Goblin Raider attacks!");
+      Game.print("Health: 60, Attack: 2");
+      
+      Game G = new Game(Name, Class);
+      System.out.print(G);
+      
+      enemy z = new enemy ("Goblin Raider",60, 200);
+      Game.print("\n\nSir Valence: \"Oh no! " + Name + " type Attack! to attack the Goblin! (Case Sensitive)");
+      
+      Turn_Based fight = new Turn_Based (G, z);
+      fight.turncombat();
+      
+      Game.print("GG");
+      
+       
+   }
+}
+      
